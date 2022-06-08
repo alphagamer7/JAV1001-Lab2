@@ -10,7 +10,7 @@ public class ArrayTools {
 
         boolean isRunning = true;
 
-        System.out.println("\ninput choice from 1-6\n1.Caesar cipher\n2.Array Average\n3.Array Contain\n4.Array Reverse\n5.Menu \n6.Exit\n");
+        displayPromptMenu();
 
         while (isRunning) {
             try {
@@ -29,7 +29,7 @@ public class ArrayTools {
                         System.out.println("Encrypted String:  " + encryptedResult);
                         String decryptedResult = caesarCipher(encryptedResult, -shiftValue);
                         System.out.println(" Decrypting " + encryptedResult + " with -" + shiftValue + "  ...." + decryptedResult);
-                        System.out.println("\nEnter choice from 1-6\n1.Caesar Cipher\n2.array average(call array contain and reverse automatically)\n3.array contain\n4.array reverse\n5.main menu\n6.exit\n");
+                        displayPromptMenu();
                         break;
 
                     case 2:
@@ -68,15 +68,16 @@ public class ArrayTools {
                         double arrayAfterReversal[] = reverse(originalArray);
                         System.out.print("\nThe array reversed is  [");
 
-                        for (int i = 0; i < arraySizeOriginal; i++) { // display reversed array
+                        for (int i = 0; i < arraySizeOriginal; i++) { 
+                            // Output array
                             System.out.print(arrayAfterReversal[i]);
                             if (i < arraySizeOriginal - 1) {
                                 System.out.print(" ");
                             }
                         }
                         System.out.print("]\n");
+                        displayPromptMenu();
 
-                        System.out.println("\ninput choice from 1-6\n1.Caesar Cipher\n2.array average(call array contain and reverse automatically)\n3.array contain\n4.array reverse\n5.main menu\n6.exit\n");
                         break;
 
                     case 3:
@@ -91,7 +92,7 @@ public class ArrayTools {
                             originalArray2[i] = element;
                         }
 
-                        System.out.print("\nTesting method with[");
+                        System.out.print("\n Running method with[");
                         for (int i = 0; i < arraySizeOriginal2; i++) {
                             System.out.print(originalArray2[i]);
                             if (i < arraySizeOriginal2 - 1) {
@@ -108,8 +109,7 @@ public class ArrayTools {
                         } else {
                             System.out.println("\nArray does not  contain " + searchItem1);
                         }
-
-                        System.out.println("\ninput choice from 1-6\n1.Caesar Cipher\n2.array average(call array contain and reverse automatically)\n3.array contain\n4.array reverse\n5.main menu\n6.exit\n");
+                        displayPromptMenu();
                         break;
 
                     case 4:
@@ -142,18 +142,17 @@ public class ArrayTools {
                             }
                         }
                         System.out.print("]\n");
-
-                        System.out.println("\ninput choice from 1-6\n1.Caesar Cipher\n2.array average(call array contain and reverse automatically)\n3.array contain\n4.array reverse\n5.main menu\n6.exit\n");
+                        displayPromptMenu();
                         break;
 
 
                     case 5:
-                        System.out.println("\ninput choice from 1-6\n1.Caesar Cipher\n2.array average(call array contain and reverse automatically)\n3.array contain\n4.array reverse\n5.main menu\n6.exit\n");
+                        displayPromptMenu();
                         break;
 
                     case 6:
                         isRunning = false;
-                        System.out.println("\nprogram stopped , you can run again");
+                        System.out.println("\nProgram Exit");
                 }
 
             } catch (Exception ex) {
@@ -163,6 +162,14 @@ public class ArrayTools {
 
         }
 
+    }
+
+
+    /*
+        Display prompt menu
+    */
+    public static void displayPromptMenu() {
+        System.out.println("\ninput choice from 1-6\n1.Caesar cipher\n2.Array Average\n3.Array Contain\n4.Array Reverse\n5.Menu \n6.Exit\n");
     }
 
     /*
